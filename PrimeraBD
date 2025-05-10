@@ -1,0 +1,24 @@
+import sqlite3
+
+miConexion=sqlite3.connect("PrimeraBD")
+
+miCursor=miConexion.cursor()
+
+
+
+productos=[
+    ("Pelota",3500,"Jugueteria"),
+    ("Pantalon",39990,"Textil"),
+    ("Destormillador",1500,"Ferreria"),
+    ("Jarron",2000,"Menaje"),
+]
+
+miCursor.execute("INSERT INTO PRODUCTOR VALUES (?,?,?,?)", productos)
+
+
+miConexion.commit()
+
+miConexion.close()
+
+
+
